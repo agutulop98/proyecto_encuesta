@@ -1,0 +1,53 @@
+@startuml
+class ConexionBD {
+    - URL: String
+    - USER: String
+    - PASSWORD: String
+    + getConexion(): Connection
+}
+
+class EncuestaDAO {
+    + insertarEncuesta(): void
+    + insertarRespuestas(): void
+    + obtenerEncuestas(): List<Encuesta>
+    + obtenerEncuestasConDetalles(): List<Encuesta>
+}
+
+class SistemaEncuesta {
+    - encuestas: List<Encuesta>
+    - userRole: String
+    - encuestaDAO: EncuestaDAO
+    + start(): void
+    + seleccionarRolUsuario(): void
+    + mostrarCrearEncuesta(): void
+    + mostrarResponderEncuesta(): void
+}
+
+class Encuesta {
+    - titulo: String
+    - descripcion: String
+    - preguntas: List<Pregunta>
+    - respuestas: List<Respuesta>
+    + agregarPregunta(): void
+    + agregarRespuesta(): void
+}
+
+class Pregunta {
+    - texto: String
+    + getTexto(): String
+}
+
+class Respuesta {
+    - pregunta: Pregunta
+    - respuesta: String
+    + getPregunta(): Pregunta
+    + getRespuesta(): String
+}
+
+EncuestaDAO --> ConexionBD : usa
+SistemaEncuesta --> EncuestaDAO : compone
+EncuestaDAO --> Encuesta : gestiona
+Encuesta --> Pregunta : compone
+Encuesta --> Respuesta : recibe
+Respuesta --> Pregunta : se refiere a
+@enduml

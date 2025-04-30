@@ -1,0 +1,79 @@
+/* Fondo de la aplicación */
+.fondo-principal {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #ffffff 0%, #d9e4f5 100%);
+}
+
+/* Título principal */
+.titulo-principal {
+    -fx-font-size: 24px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para los botones */
+.boton {
+    -fx-background-color: #4287f5;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px 10px 20px;
+    -fx-background-radius: 5px;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.boton:hover {
+    -fx-background-color: #2a65c4;
+}
+
+/* ---------------- Estilos adicionales para mejorar la UI ---------------- */
+
+/* Contenedor principal o panel */
+.panel {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 15px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Encabezado de pantalla */
+.encabezado {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 10px;
+}
+
+/* Contenedor para menús y secciones centrales */
+.menu-container {
+    -fx-alignment: center;
+    -fx-spacing: 15px;
+    -fx-padding: 20px;
+}
+
+/* Etiquetas de formularios */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+    -fx-padding: 5px 0;
+}
+
+/* Campos de entrada de texto */
+.input-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+/* Lista de resultados */
+.result-list {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+}
+
+

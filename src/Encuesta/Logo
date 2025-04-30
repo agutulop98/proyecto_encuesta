@@ -1,0 +1,51 @@
+@Override
+public void start(Stage primaryStage) {
+    primaryStage.setTitle("Sistema de Encuestas y Análisis de Opinión");
+
+    // Creamos el BorderPane principal
+    BorderPane root = new BorderPane();
+    root.getStyleClass().add("fondo-principal"); // Si tienes un estilo para el fondo
+
+    // ---- Parte superior (Top): Título ----
+    Label lblTitulo = new Label("Bienvenido al Sistema de Encuestas");
+    lblTitulo.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+    HBox topBox = new HBox(lblTitulo);
+    topBox.setAlignment(Pos.CENTER);
+    topBox.setPadding(new Insets(10));
+    root.setTop(topBox);
+
+    // ---- Parte central (Center): Botones de Menú ----
+    VBox centerBox = new VBox(15);
+    centerBox.setAlignment(Pos.CENTER);
+
+    Button btnCrearEncuesta = new Button("Crear Encuesta");
+    Button btnResponderEncuesta = new Button("Responder Encuesta");
+    Button btnVerResultados = new Button("Ver Resultados");
+    Button btnCambiarUsuario = new Button("Cambiar Usuario");
+
+    // (Eventos de los botones omitidos por brevedad)
+    centerBox.getChildren().addAll(btnCrearEncuesta, btnResponderEncuesta, btnVerResultados, btnCambiarUsuario);
+    root.setCenter(centerBox);
+
+    // ---- Parte inferior (Bottom): imagen en la esquina inferior derecha ----
+    // Carga la imagen
+    Image ueLogo = new Image(getClass().getResource("UniversidadEuropea.png").toExternalForm());
+    ImageView ueLogoView = new ImageView(ueLogo);
+
+    // Ajustes de tamaño (opcional)
+    ueLogoView.setFitWidth(100);
+    ueLogoView.setPreserveRatio(true);
+
+    // Crea un contenedor para colocar la imagen alineada a la derecha
+    HBox bottomBox = new HBox(ueLogoView);
+    bottomBox.setAlignment(Pos.BOTTOM_RIGHT);
+    bottomBox.setPadding(new Insets(10));
+    root.setBottom(bottomBox);
+
+    // ---- Creamos la escena y la asignamos al Stage ----
+    Scene scene = new Scene(root, 600, 400);
+    // Si tienes una hoja de estilos
+    // scene.getStylesheets().add(getClass().getResource("estilos.css").toExternalForm());
+    primaryStage.setScene(scene);
+    primaryStage.show();
+}
